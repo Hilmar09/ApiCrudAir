@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,5 +41,15 @@ public class UserController {
     @PutMapping
     public UserModel updatUserModel(@RequestBody UserModel user, Long id) {
         return this.userService.updateById(user, id);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public String deleteById(@PathVariable("id") Long id) {
+        boolean ok = this.userService.deleteUser(id);
+
+        if (ok)
+            return "User with id " + id + " as deleted";
+        else
+            return "Error, we have a problem to deleted user " + id;
     }
 }
