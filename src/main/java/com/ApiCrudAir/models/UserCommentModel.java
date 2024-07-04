@@ -23,7 +23,7 @@ public class UserCommentModel {
 
     
     @Column
-    private String calidadAire;
+    private Long calidadAire;
     
     @Column
     private Boolean vive;
@@ -58,11 +58,11 @@ public class UserCommentModel {
         this.ciudad = ciudad;
     }
 
-    public String getCalidadAire() {
+    public Long getCalidadAire() {
         return calidadAire;
     }
 
-    public void setCalidadAire(String calidadAire) {
+    public void setCalidadAire(Long calidadAire) {
         this.calidadAire = calidadAire;
     }
 
