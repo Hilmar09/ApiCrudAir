@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+
+  api-crud-air:
+    image: api-crud-air
+    container_name: api-crud-air-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8080"
+    networks:
+      - spring-network
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    container_name: mysql_database
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: air
+      MYSQL_USER: adminone
+      MYSQL_PASSWORD: 12345
+    ports:
+      - "3307:3306"
+    networks:
+      - spring-network
+    volumes:
+      - mysql-volume:/var/lib/mysql
+
+networks:
+  spring-network:
+volumes:
+  mysql-volume:
