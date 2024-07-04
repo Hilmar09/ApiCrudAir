@@ -20,7 +20,7 @@ public class UserService {
     }
 
     public UserModel saveUser(UserModel user) {
-        user.setPassword(Integer.toString(user.getPassword().hashCode()));
+        //user.setPassword(Integer.toString(user.getPassword().hashCode()));
         return userRepository.save(user);
     }
 
@@ -28,12 +28,14 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public UserModel updateById(UserModel request, Long id) {
-        UserModel user = userRepository.findById(id).get();
+    public UserModel updateById(UserModel request) {
+        UserModel user = userRepository.findById(request.getId()).get();
 
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
+        user.setAllergic(request.getAllergic());
+        user.setPassword(request.getPassword());
 
         return userRepository.save(user);
     }

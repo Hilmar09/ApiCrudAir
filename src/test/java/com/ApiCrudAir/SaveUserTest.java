@@ -27,12 +27,13 @@ public class SaveUserTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-
         user1 = new UserModel();
         user1.setId(1L);
         user1.setFirstName("Cristina");
         user1.setLastName("Gonzalez");
         user1.setEmail("Cris.Gonz@example.com");
+        user1.setAllergic(true);
+        user1.setPassword("Password");
     }
     @Test
     public void save_User_Test() {

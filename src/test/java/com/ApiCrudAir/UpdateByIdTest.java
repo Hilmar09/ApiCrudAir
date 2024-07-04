@@ -35,19 +35,28 @@ public class UpdateByIdTest {
         user.setFirstName("Cristina");
         user.setLastName("Gonzalez");
         user.setEmail("cris.gonz@example.com");
+        user.setAllergic(true);
+        user.setPassword("Password");
 
         when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
 
         UserModel updatedUser = new UserModel();
+
+        updatedUser.setId(1L);
         updatedUser.setFirstName("Julia");
         updatedUser.setLastName("Perez");
         updatedUser.setEmail("julia.p@example.com");
+        updatedUser.setAllergic(true);
+        updatedUser.setPassword("Password2");
 
-        userService.updateById(updatedUser, user.getId());
+        userService.updateById(updatedUser);
 
-        assertEquals("Julia", user.getFirstName());
-        assertEquals("Perez", user.getLastName());
-        assertEquals("julia.p@example.com", user.getEmail());
+        assertEquals(1, updatedUser.getId());
+        assertEquals("Julia", updatedUser.getFirstName());
+        assertEquals("Perez", updatedUser.getLastName());
+        assertEquals("julia.p@example.com", updatedUser.getEmail());
+        assertEquals(true, updatedUser.getAllergic());
+        assertEquals("1075820759", updatedUser.getPassword());
     }
 }
 

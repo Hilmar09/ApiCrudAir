@@ -75,11 +75,15 @@ public class UserModel {
         this.allergic = allergic;
     }
 
+    public Boolean getAllergic() {
+        return allergic;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = Integer.toString(password.hashCode());
     }
 }
