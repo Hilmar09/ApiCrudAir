@@ -75,6 +75,10 @@ public class UserModel {
         this.allergic = allergic;
     }
 
+    public Boolean getAllergic() {
+        return allergic;
+    }
+
     public String getPassword() {
         return password;
     }
