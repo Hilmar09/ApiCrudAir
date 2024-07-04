@@ -29,7 +29,7 @@ public class UpdateByIdTest {
     }
 
     @Test
-    public void updateUserTest() {
+    public void update_User_Test() {
         UserModel user = new UserModel();
         user.setId(1L);
         user.setFirstName("Cristina");

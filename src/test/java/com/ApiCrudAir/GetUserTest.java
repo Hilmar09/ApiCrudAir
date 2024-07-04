@@ -46,7 +46,7 @@ public class GetUserTest {
         user2.setEmail("julia.P@example.com");
     }
     @Test
-    public void getUsersTest() {
+    public void get_Users_Test() {
         List<UserModel> userList = new ArrayList<>(Arrays.asList(user1, user2));
 
         when(userRepository.findAll()).thenReturn(userList);

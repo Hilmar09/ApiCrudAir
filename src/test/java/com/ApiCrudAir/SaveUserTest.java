@@ -35,7 +35,7 @@ public class SaveUserTest {
         user1.setEmail("Cris.Gonz@example.com");
     }
     @Test
-    public void saveUserTest() {
+    public void save_User_Test() {
         when(userRepository.save(user1)).thenReturn(user1);
 
         UserModel result = userService.saveUser(user1);

@@ -30,7 +30,7 @@ public class DeleteUserTest {
     }
 
     @Test
-    public void deleteUser_Success() {
+    public void delete_User_Success() {
 
         Long userId = 1L;
         UserModel user = new UserModel();

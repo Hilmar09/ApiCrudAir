@@ -36,7 +36,7 @@ public class GetUserByIdTest {
         user1.setEmail("Cris.Gonz@example.com");
     }
     @Test
-    public void getByIdTest() {
+    public void get_By_Id_Test() {
         when(userRepository.findById(1L)).thenReturn(Optional.of(user1));
 
         Optional<UserModel> result = userService.getById(1L);
