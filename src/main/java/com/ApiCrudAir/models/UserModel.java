@@ -25,7 +25,7 @@ public class UserModel {
     private String email;
 
     @Column
-    private boolean allergic;
+    private Boolean allergic;
 
     @Column
     private String password;
@@ -67,11 +67,11 @@ public class UserModel {
         this.email = email;
     }
 
-    public boolean isAllergic() {
+    public Boolean isAllergic() {
         return allergic;
     }
 
-    public void setAllergic(boolean allergic) {
+    public void setAllergic(Boolean allergic) {
         this.allergic = allergic;
     }
 
