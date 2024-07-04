@@ -29,7 +29,7 @@ public class UserCommentModel {
     private Boolean vive;
     
     @Column
-    private Number valoracion;
+    private Integer valoracion;
     
     @Column
     private String comentario;
@@ -74,11 +74,11 @@ public class UserCommentModel {
         this.vive = vive;
     }
 
-    public Number getValoracion() {
+    public Integer getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(Number valoracion) {
+    public void setValoracion(Integer valoracion) {
         this.valoracion = valoracion;
     }
 

@@ -14,8 +14,8 @@ public class UserCommentService {
     @Autowired
     IUserCommentRepository userCommentRepository;
 
-    public ArrayList<UserCommentModel> getUsersComment() {
-        return (ArrayList<UserCommentModel>) userCommentRepository.findAll();
+    public ArrayList<UserCommentModel> getUsersCommentByUser(Long user) {
+        return (ArrayList<UserCommentModel>) userCommentRepository.findByUser(user);
     }
 
 }

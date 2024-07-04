@@ -5,7 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.ApiCrudAir.models.UserCommentModel;
 
+import java.util.ArrayList;
+
 @Repository
-public interface IUserCommentRepository extends JpaRepository<UserCommentModel, Long>{
+public interface IUserCommentRepository extends JpaRepository<UserCommentModel, Long> {
+
+    ArrayList<UserCommentModel> findByUser(Long user);
 
 }
