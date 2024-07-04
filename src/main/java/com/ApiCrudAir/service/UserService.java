@@ -20,6 +20,7 @@ public class UserService {
     }
 
     public UserModel saveUser(UserModel user) {
+        user.setPassword(Integer.toString(user.getPassword().hashCode()));
         return userRepository.save(user);
     }
 
