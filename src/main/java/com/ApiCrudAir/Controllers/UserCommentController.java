@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ApiCrudAir.models.UserCommentModel;
-import com.ApiCrudAir.models.UserModel;
 import com.ApiCrudAir.service.UserCommentService;
 
 @RestController
@@ -37,7 +36,6 @@ public class UserCommentController {
     public UserCommentModel updateUserModel(@RequestBody UserCommentModel user) {
         return this.userCommentService.updateUserCommitById(user);
     }
-
 
     @PostMapping
     public UserCommentModel saveCommentUser(@RequestBody UserCommentModel user) {
