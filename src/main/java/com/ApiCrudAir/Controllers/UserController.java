@@ -39,8 +39,8 @@ public class UserController {
     }
 
     @PutMapping
-    public UserModel updatUserModel(@RequestBody UserModel user, Long id) {
-        return this.userService.updateById(user, id);
+    public UserModel updatUserModel(@RequestBody UserModel user) {
+        return this.userService.updateById(user);
     }
 
     @DeleteMapping(path = "/{id}")

@@ -42,19 +42,21 @@ public class UpdateByIdTest {
 
         UserModel updatedUser = new UserModel();
 
+        updatedUser.setId(1L);
         updatedUser.setFirstName("Julia");
         updatedUser.setLastName("Perez");
         updatedUser.setEmail("julia.p@example.com");
         updatedUser.setAllergic(true);
         updatedUser.setPassword("Password2");
 
-        userService.updateById(updatedUser, user.getId());
+        userService.updateById(updatedUser);
 
+        assertEquals(1, updatedUser.getId());
         assertEquals("Julia", updatedUser.getFirstName());
         assertEquals("Perez", updatedUser.getLastName());
         assertEquals("julia.p@example.com", updatedUser.getEmail());
         assertEquals(true, updatedUser.getAllergic());
-        assertEquals("Password2", updatedUser.getPassword());
+        assertEquals("1075820759", updatedUser.getPassword());
     }
 }
 

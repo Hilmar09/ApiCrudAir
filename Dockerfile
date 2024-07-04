@@ -13,13 +13,13 @@ COPY ./.mvn /root/.mvn
 COPY ./mvnw /root
 
 # DESCARGAR LAS DEPENDENCIAS
-RUN ./mvnw dependency:go-offline
+#RUN ./mvnw dependency:go-offline
 
 # COPIAR EL CODIGO FUENTE DENTRO DEL CONTENEDOR
 COPY ./src /root/src
 
 # CONSTRUIR NUESTRA APLICACION
-RUN ./mvnw clean install
+#RUN ./mvnw clean install
 
 # LEVANTAR NUESTRA APLICACION CUANDO EL CONTENEDOR INICIE
-ENTRYPOINT ["java","-jar","/root/target/ApiCrudAir-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/root/target/ApiCrudAir-1.0.jar"]
