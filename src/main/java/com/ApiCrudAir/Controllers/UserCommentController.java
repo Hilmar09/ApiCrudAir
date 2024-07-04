@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +23,10 @@ public class UserCommentController {
     @GetMapping("/{user}")
     public ArrayList<UserCommentModel> getUsersCommentByUser(@PathVariable("user") Long user) {
         return this.userCommentService.getUsersCommentByUser(user);
+    }
+
+    @PostMapping
+    public UserCommentModel saveCommentUser(@RequestBody UserCommentModel user) {
+        return this.userCommentService.saveCommentUser(user);
     }
 }

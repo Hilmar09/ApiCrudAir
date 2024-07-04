@@ -18,4 +18,7 @@ public class UserCommentService {
         return (ArrayList<UserCommentModel>) userCommentRepository.findByUser(user);
     }
 
+    public UserCommentModel saveCommentUser(UserCommentModel user) {
+        return userCommentRepository.save(user);
+    }
 }
