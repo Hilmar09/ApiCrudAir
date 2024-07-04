@@ -56,7 +56,7 @@ public class UpdateByIdTest {
         assertEquals("Perez", updatedUser.getLastName());
         assertEquals("julia.p@example.com", updatedUser.getEmail());
         assertEquals(true, updatedUser.getAllergic());
-        assertEquals("1075820759", updatedUser.getPassword());
+        assertEquals(Integer.toString("Password2".hashCode()), updatedUser.getPassword());
     }
 }
 
