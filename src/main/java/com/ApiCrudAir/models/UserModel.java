@@ -24,6 +24,17 @@ public class UserModel {
     @Column
     private String email;
 
+    @Column
+    private Boolean allergic;
+
+    @Column
+    private String password;
+
+    public UserModel() {
+        super();
+
+    }
+
     public Long getId() {
         return id;
     }
@@ -54,5 +65,21 @@ public class UserModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean isAllergic() {
+        return allergic;
+    }
+
+    public void setAllergic(Boolean allergic) {
+        this.allergic = allergic;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
