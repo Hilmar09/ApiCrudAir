@@ -26,4 +26,13 @@ public class UserCommentService {
         return (ArrayList<UserCommentModel>) userCommentRepository.findAll();
 
     }
+
+    public Boolean deleteUserComment (Long id){
+        try{
+            userCommentRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
