@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ApiCrudAir.models.UserModel;
@@ -51,5 +52,10 @@ public class UserController {
             return "User with id " + id + " as deleted";
         else
             return "Error, we have a problem to deleted user " + id;
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam String email, @RequestParam String password) {
+        return userService.credentialUser(email, password);
     }
 }

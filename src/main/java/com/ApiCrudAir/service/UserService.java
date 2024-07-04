@@ -48,4 +48,14 @@ public class UserService {
             return false;
         }
     }
+
+    public String credentialUser(String email, String password) {
+        UserModel user = userRepository.findByEmail(email);
+
+        if (user != null && user.getPassword().equals(Integer.toString(password.hashCode()))) {
+            return "Auntenticate";
+        } else {
+            return null;
+        }
+    }
 }
