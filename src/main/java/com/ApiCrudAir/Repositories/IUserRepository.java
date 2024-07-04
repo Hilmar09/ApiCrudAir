@@ -8,5 +8,6 @@ import com.ApiCrudAir.models.UserModel;
 @Repository
 public interface IUserRepository extends JpaRepository<UserModel, Long> {
 
+    UserModel findByEmail(String email);
 
 }
