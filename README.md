@@ -29,9 +29,7 @@ The backend handles the business logic and data persistence. The technologies an
 
 - **Spring Web**: To build the REST API.
 - **Spring Data JPA**: For data persistence management.
-- **Spring Security**: For user authentication and authorization.
-- **H2 Database (or MySQL)**: For the database.
-- **Lombok**: To reduce boilerplate code.
+- **MySQL Database**: For the database.
 - **Spring Boot DevTools**: To facilitate development.
 
 #### Project Configuration
