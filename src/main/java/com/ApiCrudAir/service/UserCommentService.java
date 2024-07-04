@@ -21,4 +21,9 @@ public class UserCommentService {
     public UserCommentModel saveCommentUser(UserCommentModel user) {
         return userCommentRepository.save(user);
     }
+
+    public ArrayList<UserCommentModel> getCommentRandom() {
+        return (ArrayList<UserCommentModel>) userCommentRepository.findAll();
+
+    }
 }

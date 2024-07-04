@@ -20,6 +20,11 @@ public class UserCommentController {
     @Autowired
     private UserCommentService userCommentService;
 
+    @GetMapping
+    public ArrayList<UserCommentModel> getCommentRandom(){
+        return this.userCommentService.getCommentRandom();
+    }
+
     @GetMapping("/{user}")
     public ArrayList<UserCommentModel> getUsersCommentByUser(@PathVariable("user") Long user) {
         return this.userCommentService.getUsersCommentByUser(user);
