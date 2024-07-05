@@ -67,9 +67,9 @@ Extensive testing has been conducted on both the backend and frontend to ensure 
 - **To modify** request PUT with the Jason pass id:
  `{
     "id": 2,
-    "firstName": "null",
-    "lastName": "null",
-    "email": "javier@gmail.com",
+    "firstName": "nombre",
+    "lastName": "apellido",
+    "email": "email@email.com",
     "allergic": true,
-    "password": "49"
+    "password": "pasword"
   }`
